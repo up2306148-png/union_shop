@@ -233,6 +233,34 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
+          
+
+            // Static Collections Section
+
+            Padding(
+  padding: const EdgeInsets.all(24),
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: const [
+      Text(
+        'Shop Collections',
+        style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+      ),
+      SizedBox(height: 12),
+      Text(
+        'Browse our different categories of merchandise.\nThis is static content for the coursework requirement.',
+        style: TextStyle(fontSize: 16),
+      ),
+    ],
+  ),
+),
+
+
+
+
+
+
+
             // Products Section
             Container(
               color: Colors.white,
