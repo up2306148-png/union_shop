@@ -222,7 +222,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           child: const Text(
-                            'BROWSE PRODUCTS',
+                            'SHOP NOW',
                             style: TextStyle(fontSize: 14, letterSpacing: 1),
                           ),
                         ),
