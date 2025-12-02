@@ -5,20 +5,66 @@ class CollectionsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final collections = [
+      {'title': 'Hoodies', 'image': 'https://via.placeholder.com/400x300?text=Hoodies'},
+      {'title': 'T-Shirts', 'image': 'https://via.placeholder.com/400x300?text=T-Shirts'},
+      {'title': 'Accessories', 'image': 'https://via.placeholder.com/400x300?text=Accessories'},
+      {'title': 'Gifts', 'image': 'https://via.placeholder.com/400x300?text=Gifts'},
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Collections'),
         backgroundColor: const Color(0xFF4d2963),
         foregroundColor: Colors.white,
       ),
-      body: const Center(
-        child: Padding(
-          padding: EdgeInsets.all(24.0),
-          child: Text(
-            'Collections will appear here. This is a placeholder screen for collection categories.',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16, color: Colors.black54),
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: GridView.count(
+          crossAxisCount: 2,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
+          childAspectRatio: 0.9,
+          children: List.generate(collections.length, (index) {
+            final col = collections[index];
+            return GestureDetector(
+              onTap: () {
+                // placeholder tap action
+                Navigator.pushNamed(context, '/product');
+              },
+              child: Card(
+                clipBehavior: Clip.antiAlias,
+                elevation: 2,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(
+                      child: Image.network(
+                        col['image']!,
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Container(
+                            color: Colors.grey[200],
+                            child: const Center(
+                              child: Icon(Icons.image_not_supported, color: Colors.grey),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        col['title']!,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }),
         ),
       ),
     );
