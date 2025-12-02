@@ -29,8 +29,7 @@ class CollectionsScreen extends StatelessWidget {
             final col = collections[index];
             return GestureDetector(
               onTap: () {
-                // placeholder tap action
-                Navigator.pushNamed(context, '/product');
+                Navigator.pushNamed(context, '/collection');
               },
               child: Card(
                 clipBehavior: Clip.antiAlias,
