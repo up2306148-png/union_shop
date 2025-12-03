@@ -67,8 +67,35 @@ class CollectionsScreen extends StatelessWidget {
                   final col = collections[index];
                   return GestureDetector(
                     onTap: () {
-                      final route = col['title'] == 'Sale' ? '/sale' : '/collection';
-                      Navigator.pushNamed(context, route);
+                      // Select the route and optionally a product list to pass
+                      if (col['title'] == 'Sale') {
+                        Navigator.pushNamed(context, '/sale');
+                        return;
+                      }
+
+                      List<Product> productsToPass;
+                      switch (col['title']) {
+                        case 'Hoodies':
+                          productsToPass = hoodieProducts;
+                          break;
+                        case 'T-Shirts':
+                          productsToPass = tshirtProducts;
+                          break;
+                        case 'Accessories':
+                          productsToPass = accessoryProducts;
+                          break;
+                        case 'Gifts':
+                          productsToPass = giftProducts;
+                          break;
+                        default:
+                          productsToPass = [];
+                      }
+
+                      Navigator.pushNamed(
+                        context,
+                        '/collection',
+                        arguments: productsToPass,
+                      );
                     },
                     child: Card(
                       clipBehavior: Clip.antiAlias,
