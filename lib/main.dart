@@ -284,26 +284,26 @@ class HomeScreen extends StatelessWidget {
                       mainAxisSpacing: 48,
                       children: const [
                         ProductCard(
-                          title: 'Union Hoodie',
-                          price: '£35.00',
+                          title: 'Union Classic Hoodie',
+                          price: '£45.00',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
                         ProductCard(
-                          title: 'Union T-Shirt',
-                          price: '£18.00',
+                          title: 'Union Heritage T-Shirt',
+                          price: '£22.00',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
                         ProductCard(
-                          title: 'Union Mug',
-                          price: '£7.50',
+                          title: 'Union Logo Mug',
+                          price: '£9.99',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
                         ProductCard(
-                          title: 'Union Tote Bag',
-                          price: '£12.00',
+                          title: 'Union Campus Tote Bag',
+                          price: '£14.99',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
