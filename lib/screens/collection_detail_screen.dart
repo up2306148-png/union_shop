@@ -58,6 +58,34 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                     ],
                   ),
                   const SizedBox(height: 16),
+                  // Filter Chips Row
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        FilterChip(
+                          label: const Text('All'),
+                          onSelected: (value) {},
+                        ),
+                        const SizedBox(width: 8),
+                        FilterChip(
+                          label: const Text('Hoodies'),
+                          onSelected: (value) {},
+                        ),
+                        const SizedBox(width: 8),
+                        FilterChip(
+                          label: const Text('T-Shirts'),
+                          onSelected: (value) {},
+                        ),
+                        const SizedBox(width: 8),
+                        FilterChip(
+                          label: const Text('Accessories'),
+                          onSelected: (value) {},
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 16),
                   // Products Grid
                   Expanded(
                     child: GridView.count(
