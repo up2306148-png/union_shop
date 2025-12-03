@@ -38,9 +38,6 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
--    final products = _getDummyProducts();
-+    final products = widget.products;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -128,8 +125,8 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                       crossAxisSpacing: 16,
                       mainAxisSpacing: 16,
                       childAspectRatio: 0.8,
-                      children: List.generate(products.length, (index) {
-                        final product = products[index];
+                      children: List.generate(widget.products.length, (index) {
+                        final product = widget.products[index];
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
