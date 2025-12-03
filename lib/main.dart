@@ -52,6 +52,41 @@ class HomeScreen extends StatelessWidget {
     // This is the event handler for buttons that don't work yet
   }
 
+  void openMenu(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) => Container(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              title: const Text('About Us'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/about');
+              },
+            ),
+            ListTile(
+              title: const Text('Collections'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/collections');
+              },
+            ),
+            ListTile(
+              title: const Text('Sale'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/sale');
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -158,7 +193,9 @@ class HomeScreen extends StatelessWidget {
                                     minWidth: 32,
                                     minHeight: 32,
                                   ),
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: () {
+                                    openMenu(context);
+                                  },
                                 ),
                               ],
                             ),
