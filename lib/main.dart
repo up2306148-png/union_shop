@@ -335,7 +335,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class ProductCard extends StatelessWidget {
+class ProductCard extends StatefulWidget {
   final String title;
   final String price;
   final String imageUrl;
@@ -348,6 +348,13 @@ class ProductCard extends StatelessWidget {
   });
 
   @override
+  State<ProductCard> createState() => _ProductCardState();
+}
+
+class _ProductCardState extends State<ProductCard> {
+  String selectedSize = 'M';
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
@@ -358,7 +365,7 @@ class ProductCard extends StatelessWidget {
         children: [
           Expanded(
             child: Image.network(
-              imageUrl,
+              widget.imageUrl,
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) {
                 return Container(
@@ -375,14 +382,29 @@ class ProductCard extends StatelessWidget {
             children: [
               const SizedBox(height: 4),
               Text(
-                title,
+                widget.title,
                 style: const TextStyle(fontSize: 14, color: Colors.black),
                 maxLines: 2,
               ),
               const SizedBox(height: 4),
               Text(
-                price,
+                widget.price,
                 style: const TextStyle(fontSize: 13, color: Colors.grey),
+              ),
+              const SizedBox(height: 8),
+              DropdownButton<String>(
+                value: selectedSize,
+                items: const [
+                  DropdownMenuItem(value: 'S', child: Text('S')),
+                  DropdownMenuItem(value: 'M', child: Text('M')),
+                  DropdownMenuItem(value: 'L', child: Text('L')),
+                  DropdownMenuItem(value: 'XL', child: Text('XL')),
+                ],
+                onChanged: (value) {
+                  setState(() {
+                    selectedSize = value ?? 'M';
+                  });
+                },
               ),
             ],
           ),
