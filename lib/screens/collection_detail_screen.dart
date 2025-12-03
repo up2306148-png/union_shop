@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-
-class Product {
-  final String title;
-  final String price;
-  final String imageUrl;
-
-  Product({required this.title, required this.price, required this.imageUrl});
-}
+import 'product_model.dart';
 
 // Top-level private helper that returns the dummy product list.
 List<Product> _getDummyProducts() {
