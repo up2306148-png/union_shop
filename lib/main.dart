@@ -231,6 +231,75 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
+            // Centered hero with title, subtitle and CTA
+            SizedBox(
+              width: double.infinity,
+              child: Container(
+                height: 320,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(
+                      'https://shop.upsu.net/cdn/shop/files/PortsmouthCityPostcard2_1024x1024@2x.jpg?v=1752232561',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Container(
+                  // dark overlay
+                  decoration: BoxDecoration(color: Colors.black.withOpacity(0.45)),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: Center(
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 900),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Text(
+                            'Exclusive Student Union Merchandise',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 38, // increased to match real site
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              height: 1.05,
+                            ),
+                          ),
+                          const SizedBox(height: 18), // more vertical spacing for subtitle
+                          const Text(
+                            "Union Shop — the official student union store for campus apparel, gifts, and essentials.",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              height: 1.4,
+                            ),
+                          ),
+                          const SizedBox(height: 12), // button closer to the text
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/collections');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFF4d2963),
+                              foregroundColor: Colors.white,
+                              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(4),
+                              ),
+                            ),
+                            child: const Text(
+                              'BROWSE COLLECTION',
+                              style: TextStyle(fontSize: 14, letterSpacing: 1),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+ 
             // Sale Link
             Container(
               color: Colors.white,
