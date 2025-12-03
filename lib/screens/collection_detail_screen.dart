@@ -38,6 +38,8 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // use widget.products directly (do not create a local products variable)
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
