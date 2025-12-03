@@ -244,6 +244,25 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
+            // Sale Link
+            Container(
+              color: Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/sale');
+                },
+                child: const Text(
+                  'Check Out Our Sale',
+                  style: TextStyle(
+                    color: Color(0xFF4d2963),
+                    fontSize: 14,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+              ),
+            ),
+
             // About Link
             Container(
               color: Colors.white,
