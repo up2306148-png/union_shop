@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:union_shop/screens/dummy_data.dart';
 import 'package:union_shop/product_page.dart';
 import 'package:union_shop/screens/collections_screen.dart';
 import 'package:union_shop/screens/collection_detail_screen.dart';
@@ -30,7 +31,10 @@ class UnionShopApp extends StatelessWidget {
         '/product': (context) => const ProductPage(),
         '/about': (context) => const AboutUsScreen(),
         '/collections': (context) => const CollectionsScreen(),
-        '/collection': (context) => const CollectionDetailScreen(),
+        '/collection': (context) {
+          final args = ModalRoute.of(context)!.settings.arguments;
+          return CollectionDetailScreen(products: args as List<Product>?);
+        },
         '/sale': (context) => const SaleScreen(),
       },
     );
@@ -208,78 +212,21 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
-            // Hero Section
-            SizedBox(
-              height: 400,
+            // Hero Section (replaced with slim announcement bar)
+            Container(
+              height: 40,
               width: double.infinity,
-              child: Stack(
-                children: [
-                  // Background image
-                  Positioned.fill(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                            'https://shop.upsu.net/cdn/shop/files/PortsmouthCityPostcard2_1024x1024@2x.jpg?v=1752232561',
-                          ),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.7),
-                        ),
-                      ),
-                    ),
-                  ),
-                  // Content overlay
-                  Positioned(
-                    left: 24,
-                    right: 24,
-                    top: 80,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Exclusive Student Union Merchandise',
-                          style: TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            height: 1.2,
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                        const Text(
-                          "Union Shop — the official student union store for campus apparel, gifts, and essentials.",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            height: 1.5,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(height: 32),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/collections');
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF4d2963),
-                            foregroundColor: Colors.white,
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.zero,
-                            ),
-                          ),
-                          child: const Text(
-                            'SHOP NOW',
-                            style: TextStyle(fontSize: 14, letterSpacing: 1),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              color: const Color(0xFF4d2963),
+              alignment: Alignment.center,
+              child: const Text(
+                'BIG SALE! Our Essential Range is 20% OFF!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0.5,
+                ),
               ),
             ),
 

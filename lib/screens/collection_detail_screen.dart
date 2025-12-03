@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'product_model.dart';
+import 'dummy_data.dart';
 
 // Top-level private helper that returns the dummy product list.
 List<Product> _getDummyProducts() {
   return [
-    Product(title: 'Product 1', price: '£15.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+1'),
-    Product(title: 'Product 2', price: '£20.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+2'),
-    Product(title: 'Product 3', price: '£25.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+3'),
-    Product(title: 'Product 4', price: '£18.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+4'),
+    Product('Product 1', 15.00, 'https://via.placeholder.com/300x300?text=Product+1'),
+    Product('Product 2', 20.00, 'https://via.placeholder.com/300x300?text=Product+2'),
+    Product('Product 3', 25.00, 'https://via.placeholder.com/300x300?text=Product+3'),
+    Product('Product 4', 18.00, 'https://via.placeholder.com/300x300?text=Product+4'),
   ];
 }
 
@@ -147,8 +147,9 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                               overflow: TextOverflow.ellipsis,
                             ),
                             const SizedBox(height: 4),
+                            // product.price is a double in dummy_data.dart — format it for display
                             Text(
-                              product.price,
+                              '£${product.price.toStringAsFixed(2)}',
                               style: const TextStyle(fontSize: 13, color: Colors.grey),
                             ),
                             const SizedBox(height: 8),
