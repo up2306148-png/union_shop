@@ -266,7 +266,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 18), // more vertical spacing for subtitle
                           const Text(
-                            "Union Shop — the official student union store for campus apparel, gifts, and essentials.",
+                            "Over 20% off our essential range. Come and grab yours while stock lasts!",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 18,
