@@ -116,6 +116,35 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(color: Colors.white, fontSize: 14),
                     ),
                   ),
+                  // Row with SALE and ABOUT buttons (centered, spaced)
+                  Container(
+                    color: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/sale');
+                          },
+                          child: const Text(
+                            'SALE',
+                            style: TextStyle(color: Color(0xFF4d2963)),
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/about');
+                          },
+                          child: const Text(
+                            'ABOUT',
+                            style: TextStyle(color: Color(0xFF4d2963)),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   // Main header (center logo vertically, tighter icon spacing)
                   Expanded(
                     child: Container(
