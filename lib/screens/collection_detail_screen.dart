@@ -22,12 +22,7 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final products = [
-      Product(title: 'Product 1', price: '£15.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+1'),
-      Product(title: 'Product 2', price: '£20.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+2'),
-      Product(title: 'Product 3', price: '£25.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+3'),
-      Product(title: 'Product 4', price: '£18.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+4'),
-    ];
+    final products = _getDummyProducts();
 
     return Scaffold(
       appBar: AppBar(
@@ -190,4 +185,15 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
       ),
     );
   }
+
+  // Private helper that returns the dummy product list previously inlined in build().
+  List<Product> _getDummyProducts() {
+    return [
+      Product(title: 'Product 1', price: '£15.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+1'),
+      Product(title: 'Product 2', price: '£20.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+2'),
+      Product(title: 'Product 3', price: '£25.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+3'),
+      Product(title: 'Product 4', price: '£18.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+4'),
+    ];
+  }
 }
+
