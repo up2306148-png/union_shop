@@ -139,6 +139,22 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                               product['price']!,
                               style: const TextStyle(fontSize: 13, color: Colors.grey),
                             ),
+                            const SizedBox(height: 8),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/product');
+                              },
+                              style: TextButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                              ),
+                              child: const Text(
+                                'View Product',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Color(0xFF4d2963),
+                                ),
+                              ),
+                            ),
                           ],
                         );
                       }),
