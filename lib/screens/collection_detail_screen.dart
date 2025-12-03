@@ -8,10 +8,26 @@ class Product {
   Product({required this.title, required this.price, required this.imageUrl});
 }
 
+// Top-level private helper that returns the dummy product list.
+List<Product> _getDummyProducts() {
+  return [
+    Product(title: 'Product 1', price: '£15.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+1'),
+    Product(title: 'Product 2', price: '£20.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+2'),
+    Product(title: 'Product 3', price: '£25.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+3'),
+    Product(title: 'Product 4', price: '£18.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+4'),
+  ];
+}
+
 class CollectionDetailScreen extends StatefulWidget {
   final String title;
+  final List<Product> products;
 
-  const CollectionDetailScreen({super.key, this.title = 'Collection Detail'});
+  // Accept an optional products list; default to the dummy list so existing callers continue to work.
+  CollectionDetailScreen({
+    super.key,
+    this.title = 'Collection Detail',
+    List<Product>? products,
+  }) : products = products ?? _getDummyProducts();
 
   @override
   State<CollectionDetailScreen> createState() => _CollectionDetailScreenState();
@@ -22,7 +38,8 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final products = _getDummyProducts();
+-    final products = _getDummyProducts();
++    final products = widget.products;
 
     return Scaffold(
       appBar: AppBar(
@@ -184,16 +201,6 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
         ],
       ),
     );
-  }
-
-  // Private helper that returns the dummy product list previously inlined in build().
-  List<Product> _getDummyProducts() {
-    return [
-      Product(title: 'Product 1', price: '£15.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+1'),
-      Product(title: 'Product 2', price: '£20.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+2'),
-      Product(title: 'Product 3', price: '£25.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+3'),
-      Product(title: 'Product 4', price: '£18.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+4'),
-    ];
   }
 }
 
