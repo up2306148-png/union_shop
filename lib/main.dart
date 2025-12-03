@@ -99,26 +99,27 @@ class HomeScreen extends StatelessWidget {
           children: [
             // Header
             Container(
-              height: 100,
+              height: 72,
               color: Colors.white,
               child: Column(
                 children: [
-                  // Top banner
+                  // Top banner (slimmer)
                   Container(
                     width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    padding: const EdgeInsets.symmetric(vertical: 6),
                     color: const Color(0xFF4d2963),
                     child: const Text(
                       'Welcome to Union Shop',
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: TextStyle(color: Colors.white, fontSize: 14),
                     ),
                   ),
-                  // Main header
+                  // Main header (center logo vertically, tighter icon spacing)
                   Expanded(
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           GestureDetector(
                             onTap: () {
@@ -126,13 +127,13 @@ class HomeScreen extends StatelessWidget {
                             },
                             child: Image.network(
                               'https://shop.upsu.net/cdn/shop/files/upsu_300x300.png?v=1614735854',
-                              height: 18,
+                              height: 28,
                               fit: BoxFit.cover,
                               errorBuilder: (context, error, stackTrace) {
                                 return Container(
                                   color: Colors.grey[300],
-                                  width: 18,
-                                  height: 18,
+                                  width: 28,
+                                  height: 28,
                                   child: const Center(
                                     child: Icon(Icons.image_not_supported,
                                         color: Colors.grey),
@@ -153,10 +154,10 @@ class HomeScreen extends StatelessWidget {
                                     size: 18,
                                     color: Colors.grey,
                                   ),
-                                  padding: const EdgeInsets.all(8),
+                                  padding: const EdgeInsets.all(4),
                                   constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
+                                    minWidth: 36,
+                                    minHeight: 36,
                                   ),
                                   onPressed: placeholderCallbackForButtons,
                                 ),
@@ -166,10 +167,10 @@ class HomeScreen extends StatelessWidget {
                                     size: 18,
                                     color: Colors.grey,
                                   ),
-                                  padding: const EdgeInsets.all(8),
+                                  padding: const EdgeInsets.all(4),
                                   constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
+                                    minWidth: 36,
+                                    minHeight: 36,
                                   ),
                                   onPressed: placeholderCallbackForButtons,
                                 ),
@@ -179,10 +180,10 @@ class HomeScreen extends StatelessWidget {
                                     size: 18,
                                     color: Colors.grey,
                                   ),
-                                  padding: const EdgeInsets.all(8),
+                                  padding: const EdgeInsets.all(4),
                                   constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
+                                    minWidth: 36,
+                                    minHeight: 36,
                                   ),
                                   onPressed: placeholderCallbackForButtons,
                                 ),
@@ -192,10 +193,10 @@ class HomeScreen extends StatelessWidget {
                                     size: 18,
                                     color: Colors.grey,
                                   ),
-                                  padding: const EdgeInsets.all(8),
+                                  padding: const EdgeInsets.all(4),
                                   constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
+                                    minWidth: 36,
+                                    minHeight: 36,
                                   ),
                                   onPressed: () {
                                     openMenu(context);
