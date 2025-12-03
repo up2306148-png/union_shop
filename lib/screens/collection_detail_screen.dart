@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 
+class Product {
+  final String title;
+  final String price;
+  final String imageUrl;
+
+  Product({required this.title, required this.price, required this.imageUrl});
+}
+
 class CollectionDetailScreen extends StatefulWidget {
   final String title;
 
@@ -15,10 +23,10 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
   @override
   Widget build(BuildContext context) {
     final products = [
-      {'title': 'Product 1', 'price': '£15.00', 'image': 'https://via.placeholder.com/300x300?text=Product+1'},
-      {'title': 'Product 2', 'price': '£20.00', 'image': 'https://via.placeholder.com/300x300?text=Product+2'},
-      {'title': 'Product 3', 'price': '£25.00', 'image': 'https://via.placeholder.com/300x300?text=Product+3'},
-      {'title': 'Product 4', 'price': '£18.00', 'image': 'https://via.placeholder.com/300x300?text=Product+4'},
+      Product(title: 'Product 1', price: '£15.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+1'),
+      Product(title: 'Product 2', price: '£20.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+2'),
+      Product(title: 'Product 3', price: '£25.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+3'),
+      Product(title: 'Product 4', price: '£18.00', imageUrl: 'https://via.placeholder.com/300x300?text=Product+4'),
     ];
 
     return Scaffold(
@@ -115,7 +123,7 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                           children: [
                             Expanded(
                               child: Image.network(
-                                product['image']!,
+                                product.imageUrl,
                                 fit: BoxFit.cover,
                                 errorBuilder: (context, error, stackTrace) {
                                   return Container(
@@ -129,14 +137,14 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              product['title']!,
+                              product.title,
                               style: const TextStyle(fontSize: 14, color: Colors.black),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
                             const SizedBox(height: 4),
                             Text(
-                              product['price']!,
+                              product.price,
                               style: const TextStyle(fontSize: 13, color: Colors.grey),
                             ),
                             const SizedBox(height: 8),
