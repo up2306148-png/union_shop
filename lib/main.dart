@@ -3,6 +3,7 @@ import 'package:union_shop/product_page.dart';
 import 'package:union_shop/screens/collections_screen.dart';
 import 'package:union_shop/screens/collection_detail_screen.dart';
 import 'package:union_shop/screens/about_us.dart';
+import 'package:union_shop/screens/sale_screen.dart';
 
 
 void main() {
@@ -30,6 +31,7 @@ class UnionShopApp extends StatelessWidget {
         '/about': (context) => const AboutUsScreen(),
         '/collections': (context) => const CollectionsScreen(),
         '/collection': (context) => const CollectionDetailScreen(),
+        '/sale': (context) => const SaleScreen(),
       },
     );
   }
