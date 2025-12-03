@@ -10,6 +10,7 @@ class CollectionsScreen extends StatelessWidget {
       {'title': 'T-Shirts', 'image': 'https://via.placeholder.com/400x300?text=T-Shirts'},
       {'title': 'Accessories', 'image': 'https://via.placeholder.com/400x300?text=Accessories'},
       {'title': 'Gifts', 'image': 'https://via.placeholder.com/400x300?text=Gifts'},
+      {'title': 'Sale', 'image': 'https://via.placeholder.com/400x300?text=Sale'},
     ];
 
     return Scaffold(
@@ -29,7 +30,8 @@ class CollectionsScreen extends StatelessWidget {
             final col = collections[index];
             return GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/collection');
+                final route = col['title'] == 'Sale' ? '/sale' : '/collection';
+                Navigator.pushNamed(context, route);
               },
               child: Card(
                 clipBehavior: Clip.antiAlias,
