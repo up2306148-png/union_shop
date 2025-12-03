@@ -353,6 +353,7 @@ class ProductCard extends StatefulWidget {
 
 class _ProductCardState extends State<ProductCard> {
   String selectedSize = 'M';
+  int quantity = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -405,6 +406,51 @@ class _ProductCardState extends State<ProductCard> {
                     selectedSize = value ?? 'M';
                   });
                 },
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.remove, size: 18),
+                    onPressed: () {
+                      setState(() {
+                        if (quantity > 1) quantity--;
+                      });
+                    },
+                    padding: const EdgeInsets.all(4),
+                    constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
+                  ),
+                  SizedBox(
+                    width: 40,
+                    child: Center(
+                      child: Text(quantity.toString(), style: const TextStyle(fontSize: 14)),
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.add, size: 18),
+                    onPressed: () {
+                      setState(() {
+                        quantity++;
+                      });
+                    },
+                    padding: const EdgeInsets.all(4),
+                    constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // placeholder: add to cart action
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF4d2963),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                      ),
+                      child: const Text('Add to cart', style: TextStyle(fontSize: 12)),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
