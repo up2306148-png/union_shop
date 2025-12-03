@@ -32,8 +32,10 @@ class UnionShopApp extends StatelessWidget {
         '/about': (context) => const AboutUsScreen(),
         '/collections': (context) => const CollectionsScreen(),
         '/collection': (context) {
-          final args = ModalRoute.of(context)!.settings.arguments;
-          return CollectionDetailScreen(products: args as List<Product>?);
+          // Safely obtain route arguments and validate type
+          final args = ModalRoute.of(context)?.settings.arguments;
+          final products = args is List<Product> ? args : null;
+          return CollectionDetailScreen(products: products);
         },
         '/sale': (context) => const SaleScreen(),
       },
@@ -402,104 +404,106 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-+
-+                      // Help & Information
-+                      Expanded(
-+                        child: Column(
-+                          crossAxisAlignment: CrossAxisAlignment.start,
-+                          children: const [
-+                            Text('Help & Information',
-+                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-+                            SizedBox(height: 8),
-+                            Text('Contact Us'),
-+                            Text('Delivery & Returns'),
-+                            Text('Terms & Conditions'),
-+                            Text('Privacy Policy'),
-+                          ],
-+                        ),
-+                      ),
-+
-+                      // Newsletter
-+                      Expanded(
-+                        child: Column(
-+                          crossAxisAlignment: CrossAxisAlignment.start,
-+                          children: [
-+                            const Text('Newsletter',
-+                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-+                            const SizedBox(height: 8),
-+                            const Text('Sign up to receive news and offers'),
-+                            const SizedBox(height: 8),
-+                            // simple static TextField (no controller required)
-+                            Container(
-+                              color: Colors.white,
-+                              child: Row(
-+                                children: [
-+                                  Expanded(
-+                                    child: TextField(
-+                                      decoration: InputDecoration(
-+                                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-+                                        hintText: 'Enter your email',
-+                                        border: OutlineInputBorder(
-+                                          borderRadius: BorderRadius.circular(4),
-+                                        ),
-+                                      ),
-+                                    ),
-+                                  ),
-+                                  const SizedBox(width: 8),
-+                                  ElevatedButton(
-+                                    onPressed: () {},
-+                                    style: ElevatedButton.styleFrom(
-+                                      backgroundColor: const Color(0xFF4d2963),
-+                                    ),
-+                                    child: const Text('Subscribe'),
-+                                  ),
-+                                ],
-+                              ),
-+                            ),
-+                          ],
-+                        ),
-+                      ),
-+                    ],
-+                  ),
-+
-+                  const SizedBox(height: 20),
-+                  const Divider(),
-+                  const SizedBox(height: 12),
-+
-+                  // social + payment icons row
-+                  Row(
-+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-+                    children: [
-+                      Row(
-+                        children: const [
-+                          Icon(Icons.facebook, size: 20, color: Colors.grey),
-+                          SizedBox(width: 12),
-+                          Icon(Icons.twitter, size: 20, color: Colors.grey),
-+                          SizedBox(width: 12),
-+                          Icon(Icons.instagram, size: 20, color: Colors.grey),
-+                        ],
-+                      ),
-+                      Row(
-+                        children: const [
-+                          Icon(Icons.credit_card, size: 20, color: Colors.grey),
-+                          SizedBox(width: 8),
-+                          Icon(Icons.payment, size: 20, color: Colors.grey),
-+                          SizedBox(width: 8),
-+                          Icon(Icons.account_balance_wallet, size: 20, color: Colors.grey),
-+                        ],
-+                      ),
-+                    ],
-+                  ),
-+
-+                  const SizedBox(height: 12),
-+                  const Center(
-+                    child: Text(
-+                      '© 2025 Union Shop',
-+                      style: TextStyle(color: Colors.grey, fontSize: 13),
-+                    ),
-+                  ),
+
+                      // Help & Information
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text('Help & Information',
+                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                            SizedBox(height: 8),
+                            Text('Contact Us'),
+                            Text('Delivery & Returns'),
+                            Text('Terms & Conditions'),
+                            Text('Privacy Policy'),
+                          ],
+                        ),
+                      ),
+
+                      // Newsletter
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text('Newsletter',
+                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                            const SizedBox(height: 8),
+                            const Text('Sign up to receive news and offers'),
+                            const SizedBox(height: 8),
+                            // simple static TextField (no controller required)
+                            Container(
+                              color: Colors.white,
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                        hintText: 'Enter your email',
+                                        border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.circular(4),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 8),
+                                  ElevatedButton(
+                                    onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color(0xFF4d2963),
+                                    ),
+                                    child: const Text('Subscribe'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(height: 20),
+                  const Divider(),
+                  const SizedBox(height: 12),
+
+                  // social + payment icons row
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: const [
+                          Icon(Icons.facebook, size: 20, color: Colors.grey),
+                          SizedBox(width: 12),
+                          // Twitter and Instagram are not available as Icons.* in Material by default.
+                          // Use alternative available icons (send / camera) to avoid errors.
+                          Icon(Icons.send, size: 20, color: Colors.grey),
+                          SizedBox(width: 12),
+                          Icon(Icons.camera_alt, size: 20, color: Colors.grey),
+                        ],
+                      ),
+                      Row(
+                        children: const [
+                          Icon(Icons.credit_card, size: 20, color: Colors.grey),
+                          SizedBox(width: 8),
+                          Icon(Icons.payment, size: 20, color: Colors.grey),
+                          SizedBox(width: 8),
+                          Icon(Icons.account_balance_wallet, size: 20, color: Colors.grey),
+                        ],
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(height: 12),
+                  const Center(
+                    child: Text(
+                      '© 2025 Union Shop',
+                      style: TextStyle(color: Colors.grey, fontSize: 13),
+                    ),
+                  ),
                 ],
-+              ),
+              ),
             ),
           ],
         ),
