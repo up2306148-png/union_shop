@@ -86,6 +86,21 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                     ),
                   ),
                   const SizedBox(height: 16),
+                  // Sorting Status
+                  if (sortBy != 'Recommended')
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 12.0),
+                      child: Text(
+                        sortBy == 'Price: Low to High'
+                            ? 'Sorting: Low to High'
+                            : 'Sorting: High to Low',
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                    ),
                   // Products Grid
                   Expanded(
                     child: GridView.count(
