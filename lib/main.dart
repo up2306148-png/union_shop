@@ -239,7 +239,7 @@ class HomeScreen extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           const Text(
-                            'Exclusive Student Union Merchandise',
+                            'Essential Range - Over 20% OFF!',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 38, // increased to match real site
