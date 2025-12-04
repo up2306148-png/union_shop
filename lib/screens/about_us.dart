@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:union_shop/widgets/header.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
@@ -17,6 +18,7 @@ class AboutUsScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
+          const Header(), // inserted header at the very top of the page content
           Expanded(
             child: SingleChildScrollView(
               child: Padding(
