@@ -22,6 +22,22 @@ class CollectionsScreen extends StatelessWidget {
           children: [
             const Header(),
 
+            // Added centered COLLECTIONS title below Header and above the back button
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 12.0),
+              child: Center(
+                child: Text(
+                  'COLLECTIONS',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+              ),
+            ),
+
             // Back button moved to be directly after the Header (above the collection images)
             // Make the back button flush to the left edge and remove default IconButton padding
             Container(
