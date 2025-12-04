@@ -340,30 +340,42 @@ class HomeScreen extends StatelessWidget {
                           MediaQuery.of(context).size.width > 600 ? 2 : 1,
                       crossAxisSpacing: 24,
                       mainAxisSpacing: 48,
-                      children: const [
+                      children: [
                         ProductCard(
-                          title: 'Union Classic Hoodie',
-                          price: '£45.00',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                          product: Product(
+                            'Union Classic Hoodie',
+                            45.00,
+                            'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                            previousPrice: 49.99,
+                            description: 'Classic comfy hoodie.',
+                          ),
                         ),
                         ProductCard(
-                          title: 'Union Heritage T-Shirt',
-                          price: '£22.00',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                          product: Product(
+                            'Union Heritage T-Shirt',
+                            22.00,
+                            'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                            previousPrice: 24.99,
+                            description: 'Heritage style t-shirt.',
+                          ),
                         ),
                         ProductCard(
-                          title: 'Union Logo Mug',
-                          price: '£9.99',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                          product: Product(
+                            'Union Logo Mug',
+                            9.99,
+                            'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                            previousPrice: 12.50,
+                            description: 'Ceramic logo mug.',
+                          ),
                         ),
                         ProductCard(
-                          title: 'Union Campus Tote Bag',
-                          price: '£14.99',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                          product: Product(
+                            'Union Campus Tote Bag',
+                            14.99,
+                            'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                            previousPrice: 18.00,
+                            description: 'Durable campus tote bag.',
+                          ),
                         ),
                       ],
                     ),
@@ -508,15 +520,11 @@ class HomeScreen extends StatelessWidget {
 }
 
 class ProductCard extends StatefulWidget {
-  final String title;
-  final String price;
-  final String imageUrl;
+  final Product product;
 
   const ProductCard({
     super.key,
-    required this.title,
-    required this.price,
-    required this.imageUrl,
+    required this.product,
   });
 
   @override
@@ -528,14 +536,14 @@ class _ProductCardState extends State<ProductCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/product');
+        Navigator.pushNamed(context, '/product', arguments: widget.product);
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: Image.network(
-              widget.imageUrl,
+              widget.product.imageUrl,
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) {
                 return Container(
@@ -550,14 +558,14 @@ class _ProductCardState extends State<ProductCard> {
           // simplified details: only title and price
           const SizedBox(height: 8),
           Text(
-            widget.title,
+            widget.product.title,
             style: const TextStyle(fontSize: 14, color: Colors.black),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
           const SizedBox(height: 4),
           Text(
-            widget.price,
+            '£${widget.product.price.toStringAsFixed(2)}',
             style: const TextStyle(fontSize: 13, color: Colors.grey),
           ),
         ],
