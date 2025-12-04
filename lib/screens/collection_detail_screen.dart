@@ -45,6 +45,12 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
+              // Back button placed at the very top of the body
+              IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () => Navigator.pop(context),
+              ),
+
               // Sort by Row
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
