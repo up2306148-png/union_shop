@@ -168,7 +168,7 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                       const SizedBox(height: 8),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/product');
+                          Navigator.pushNamed(context, '/product', arguments: product);
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
