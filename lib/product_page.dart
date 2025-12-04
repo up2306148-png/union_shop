@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:union_shop/screens/dummy_data.dart'; // <-- added import
 import 'package:union_shop/widgets/footer.dart';
+import 'package:union_shop/screens/cart_state.dart'; // added import
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key});
@@ -212,27 +213,47 @@ class ProductPage extends StatelessWidget {
 
                   // Product price
                   if (product != null)
-                    Row(
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        if (product.previousPrice != null)
-                          Padding(
-                            padding: const EdgeInsets.only(right: 12.0),
-                            child: Text(
-                              '£${product.previousPrice!.toStringAsFixed(2)}',
+                        Row(
+                          children: [
+                            if (product.previousPrice != null)
+                              Padding(
+                                padding: const EdgeInsets.only(right: 12.0),
+                                child: Text(
+                                  '£${product.previousPrice!.toStringAsFixed(2)}',
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.grey,
+                                    decoration: TextDecoration.lineThrough,
+                                  ),
+                                ),
+                              ),
+                            Text(
+                              '£${product.price.toStringAsFixed(2)}',
                               style: const TextStyle(
-                                fontSize: 18,
-                                color: Colors.grey,
-                                decoration: TextDecoration.lineThrough,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF4d2963),
                               ),
                             ),
+                          ],
+                        ),
+                        const SizedBox(height: 12),
+                        ElevatedButton(
+                          onPressed: () {
+                            cartItems.add(product);
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(content: Text('Added to cart')),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFF4d2963),
+                            foregroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                           ),
-                        Text(
-                          '£${product.price.toStringAsFixed(2)}',
-                          style: const TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFF4d2963),
-                          ),
+                          child: const Text('Add to cart'),
                         ),
                       ],
                     )

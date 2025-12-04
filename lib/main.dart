@@ -223,7 +223,9 @@ class HomeScreen extends StatelessWidget {
                                     minWidth: 36,
                                     minHeight: 36,
                                   ),
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/cart');
+                                  },
                                 ),
                                 IconButton(
                                   icon: const Icon(
