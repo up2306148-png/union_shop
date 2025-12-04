@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:union_shop/widgets/header.dart';
 import 'dummy_data.dart';
 import 'package:union_shop/widgets/footer.dart';
 
@@ -39,12 +40,24 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
         title: Text(widget.title),
         backgroundColor: const Color(0xFF4d2963),
         foregroundColor: Colors.white,
+        automaticallyImplyLeading: false, // hide the AppBar's default back button
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
+              const Header(), // inserted header at the very top of the body column
+              // Back button moved here so it appears directly below the Header
+              Align(
+                alignment: Alignment.centerLeft,
+                child: IconButton(
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                  icon: const Icon(Icons.arrow_back, color: Color(0xFF4d2963)),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+              ),
               // Sort by Row
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
