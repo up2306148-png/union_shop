@@ -9,8 +9,8 @@ class CollectionsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final collections = [
-      {'title': 'Hoodies', 'image': 'https://via.placeholder.com/400x300?text=Hoodies'},
-      {'title': 'T-Shirts', 'image': 'https://via.placeholder.com/400x300?text=T-Shirts'},
+      {'title': 'Hoodies', 'image': 'https://img.sonofatailor.com/images/customizer/product/hoodie-2/Black.jpg'},
+      {'title': 'T-Shirts', 'image': 'https://www.buytshirtsonline.co.uk/images/fruit-of-the-loom-cheap-white-t-shirts-p526-160409_image.jpg'},
       {'title': 'Accessories', 'image': 'https://via.placeholder.com/400x300?text=Accessories'},
       {'title': 'Gifts', 'image': 'https://via.placeholder.com/400x300?text=Gifts'},
       {'title': 'Sale', 'image': 'https://via.placeholder.com/400x300?text=Sale'},
