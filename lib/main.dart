@@ -520,9 +520,6 @@ class ProductCard extends StatefulWidget {
 }
 
 class _ProductCardState extends State<ProductCard> {
-  String selectedSize = 'M';
-  int quantity = 1;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -546,81 +543,18 @@ class _ProductCardState extends State<ProductCard> {
               },
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 4),
-              Text(
-                widget.title,
-                style: const TextStyle(fontSize: 14, color: Colors.black),
-                maxLines: 2,
-              ),
-              const SizedBox(height: 4),
-              Text(
-                widget.price,
-                style: const TextStyle(fontSize: 13, color: Colors.grey),
-              ),
-              const SizedBox(height: 8),
-              DropdownButton<String>(
-                value: selectedSize,
-                items: const [
-                  DropdownMenuItem(value: 'S', child: Text('S')),
-                  DropdownMenuItem(value: 'M', child: Text('M')),
-                  DropdownMenuItem(value: 'L', child: Text('L')),
-                  DropdownMenuItem(value: 'XL', child: Text('XL')),
-                ],
-                onChanged: (value) {
-                  setState(() {
-                    selectedSize = value ?? 'M';
-                  });
-                },
-              ),
-              const SizedBox(height: 12),
-              Row(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.remove, size: 18),
-                    onPressed: () {
-                      setState(() {
-                        if (quantity > 1) quantity--;
-                      });
-                    },
-                    padding: const EdgeInsets.all(4),
-                    constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
-                  ),
-                  SizedBox(
-                    width: 40,
-                    child: Center(
-                      child: Text(quantity.toString(), style: const TextStyle(fontSize: 14)),
-                    ),
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.add, size: 18),
-                    onPressed: () {
-                      setState(() {
-                        quantity++;
-                      });
-                    },
-                    padding: const EdgeInsets.all(4),
-                    constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // placeholder: add to cart action
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF4d2963),
-                        foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 10),
-                      ),
-                      child: const Text('Add to cart', style: TextStyle(fontSize: 12)),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+          // simplified details: only title and price
+          const SizedBox(height: 8),
+          Text(
+            widget.title,
+            style: const TextStyle(fontSize: 14, color: Colors.black),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+          const SizedBox(height: 4),
+          Text(
+            widget.price,
+            style: const TextStyle(fontSize: 13, color: Colors.grey),
           ),
         ],
       ),

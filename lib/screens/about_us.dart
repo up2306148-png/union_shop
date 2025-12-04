@@ -34,7 +34,17 @@ class AboutUsScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     const Text(
-                      'Union Shop is the official merchandise store of the Students\' Union, dedicated to serving the campus community. We offer a wide range of high-quality apparel, accessories, and gifts featuring official university and union branding. From hoodies and t-shirts to mugs and tote bags, every product is carefully selected to represent student pride and community spirit. Our mission is to provide students with authentic union merchandise while supporting student activities and initiatives on campus.',
+                      '''Welcome to the Union Shop!
+                      
+We’re dedicated to giving you the very best University branded products, with a range of clothing and merchandise available to shop all year round! We even offer an exclusive personalisation service!
+
+All online purchases are available for delivery or instore collection!
+
+We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don’t hesitate to contact us at hello@upsu.net.
+
+Happy shopping!
+
+The Union Shop & Reception Team''',
                       style: TextStyle(fontSize: 16, color: Colors.grey),
                     ),
                     const SizedBox(height: 24),
