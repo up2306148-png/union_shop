@@ -27,6 +27,16 @@ class ProductPage extends StatelessWidget {
             // Header
             const Header(),
 
+            // Back button moved directly below the Header for consistent layout
+            Align(
+              alignment: Alignment.centerLeft,
+              child: IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ),
+            const SizedBox(height: 12),
+
             // Product details
             Container(
               color: Colors.white,
@@ -34,12 +44,8 @@ class ProductPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Back button added above the product image
-                  IconButton(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () => Navigator.pop(context),
-                  ),
-
+                  // small top spacing so image isn't flush with container padding
+                  const SizedBox(height: 8),
                   // Product image
                   Container(
                     height: 300,
@@ -79,7 +85,8 @@ class ProductPage extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 24),
+                  // consistent spacing before title
+                  const SizedBox(height: 16),
 
                   // Product name
                   Text(
