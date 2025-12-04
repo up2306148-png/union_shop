@@ -6,6 +6,7 @@ import 'package:union_shop/screens/collection_detail_screen.dart';
 import 'package:union_shop/screens/about_us.dart';
 import 'package:union_shop/screens/sale_screen.dart';
 import 'package:union_shop/screens/sign_in_screen.dart';
+import 'package:union_shop/screens/cart_screen.dart';
 import 'package:union_shop/widgets/footer.dart'; // added import
 
 
@@ -41,6 +42,7 @@ class UnionShopApp extends StatelessWidget {
           return CollectionDetailScreen(products: products);
         },
         '/sale': (context) => const SaleScreen(),
+        '/cart': (context) => CartScreen(),
       },
     );
   }
