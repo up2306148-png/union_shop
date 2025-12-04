@@ -5,6 +5,7 @@ import 'package:union_shop/screens/collections_screen.dart';
 import 'package:union_shop/screens/collection_detail_screen.dart';
 import 'package:union_shop/screens/about_us.dart';
 import 'package:union_shop/screens/sale_screen.dart';
+import 'package:union_shop/screens/sign_in_screen.dart';
 
 
 void main() {
@@ -30,6 +31,7 @@ class UnionShopApp extends StatelessWidget {
       routes: {
         '/product': (context) => const ProductPage(),
         '/about': (context) => const AboutUsScreen(),
+        '/signin': (context) => const SignInScreen(),
         '/collections': (context) => const CollectionsScreen(),
         '/collection': (context) {
           // Safely obtain route arguments and validate type
