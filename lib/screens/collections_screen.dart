@@ -21,6 +21,13 @@ class CollectionsScreen extends StatelessWidget {
         child: Column(
           children: [
             const Header(),
+
+            // Back button moved to be directly after the Header (above the collection images)
+            IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () => Navigator.pop(context),
+            ),
+
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: GridView.count(
