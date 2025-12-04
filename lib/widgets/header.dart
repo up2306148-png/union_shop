@@ -73,7 +73,7 @@ class Header extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/sale');
+                    Navigator.pushReplacementNamed(context, '/sale');
                   },
                   child: const Text(
                     'SALE',

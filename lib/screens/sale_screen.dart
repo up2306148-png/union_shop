@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:union_shop/widgets/footer.dart';
 import 'package:union_shop/widgets/header.dart';
 
+// Helper to navigate to the Sale screen using pushReplacementNamed so a duplicate SaleScreen won't be stacked.
+void navigateToSale(BuildContext context) {
+  Navigator.pushReplacementNamed(context, '/sale');
+}
+
 class SaleScreen extends StatelessWidget {
   const SaleScreen({super.key});
 
