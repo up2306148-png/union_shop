@@ -101,7 +101,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             // Header
             Container(
-              height: 72,
+              height: 120,
               color: Colors.white,
               child: Column(
                 children: [
@@ -158,7 +158,7 @@ class HomeScreen extends StatelessWidget {
                             },
                             child: Image.network(
                               'https://shop.upsu.net/cdn/shop/files/upsu_300x300.png?v=1614735854',
-                              height: 28,
+                              height: 36,
                               fit: BoxFit.cover,
                               errorBuilder: (context, error, stackTrace) {
                                 return Container(
