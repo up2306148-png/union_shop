@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:union_shop/widgets/footer.dart';
+import 'package:union_shop/widgets/header.dart';
 
 class SaleScreen extends StatelessWidget {
   const SaleScreen({super.key});
@@ -14,14 +15,10 @@ class SaleScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sale'),
-        backgroundColor: const Color(0xFF4d2963),
-        foregroundColor: Colors.white,
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const Header(),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: GridView.count(
