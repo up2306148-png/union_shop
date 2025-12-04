@@ -18,6 +18,13 @@ class SaleScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ),
             const Header(),
             Padding(
               padding: const EdgeInsets.all(16.0),
