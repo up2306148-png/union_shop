@@ -73,6 +73,16 @@ class Header extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {
+                    navigateToHome(context);
+                  },
+                  child: const Text(
+                    'HOME',
+                    style: TextStyle(color: Color(0xFF4d2963)),
+                  ),
+                ),
+                const SizedBox(width: 16),
+                TextButton(
+                  onPressed: () {
                     Navigator.pushReplacementNamed(context, '/sale');
                   },
                   child: const Text(
