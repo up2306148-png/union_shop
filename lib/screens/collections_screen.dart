@@ -21,12 +21,15 @@ class CollectionsScreen extends StatelessWidget {
         backgroundColor: const Color(0xFF4d2963),
         foregroundColor: Colors.white,
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Padding(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
               padding: const EdgeInsets.all(12.0),
               child: GridView.count(
+                // Removed Expanded and made the GridView size itself inside the scroll view
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
@@ -100,10 +103,10 @@ class CollectionsScreen extends StatelessWidget {
                 }),
               ),
             ),
-          ),
-          // Footer
-          const Footer(),
-        ],
+            // Footer
+            const Footer(),
+          ],
+        ),
       ),
     );
   }
