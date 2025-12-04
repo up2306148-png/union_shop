@@ -16,6 +16,17 @@ class _CartScreenState extends State<CartScreen> {
       appBar: AppBar(
         title: const Text('Your Cart'),
         backgroundColor: const Color(0xFF4d2963),
+        actions: [
+          IconButton(
+            tooltip: 'Clear Cart',
+            icon: const Icon(Icons.delete_forever),
+            onPressed: () {
+              setState(() {
+                cartItems.clear();
+              });
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
