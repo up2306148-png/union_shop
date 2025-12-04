@@ -81,6 +81,19 @@ class Header extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 16),
+
+                // Added COLLECTIONS button
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/collections');
+                  },
+                  child: const Text(
+                    'COLLECTIONS',
+                    style: TextStyle(color: Color(0xFF4d2963)),
+                  ),
+                ),
+                const SizedBox(width: 16),
+
                 TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/sale');
