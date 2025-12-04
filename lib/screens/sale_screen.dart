@@ -24,6 +24,23 @@ class SaleScreen extends StatelessWidget {
         child: Column(
           children: [
             const Header(), // moved header to the top of the screen
+
+            // Added centered SALE title below Header and above the back button
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 12.0),
+              child: Center(
+                child: Text(
+                  'SALE',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    letterSpacing: 1.2,
+                  ),
+                ),
+              ),
+            ),
+
             Align(
               alignment: Alignment.centerLeft,
               child: IconButton(
