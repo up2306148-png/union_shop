@@ -23,9 +23,17 @@ class CollectionsScreen extends StatelessWidget {
             const Header(),
 
             // Back button moved to be directly after the Header (above the collection images)
-            IconButton(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () => Navigator.pop(context),
+            // Make the back button flush to the left edge and remove default IconButton padding
+            Container(
+              width: double.infinity,
+              alignment: Alignment.centerLeft,
+              padding: const EdgeInsets.only(left: 4.0, top: 6.0),
+              child: IconButton(
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(minWidth: 0, minHeight: 0),
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () => Navigator.pop(context),
+              ),
             ),
 
             Padding(
