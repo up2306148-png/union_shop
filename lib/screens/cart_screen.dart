@@ -71,21 +71,38 @@ class _CartScreenState extends State<CartScreen> {
                             title: Text(product.title),
                             subtitle: Text(
                                 '£${product.price.toStringAsFixed(2)}  × $qty'),
-                            trailing: TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  // remove a single matching item from cartItems
-                                  final removeIndex = cartItems.indexWhere((it) =>
-                                      '${it.title}||${it.price}' == key);
-                                  if (removeIndex != -1) {
-                                    cartItems.removeAt(removeIndex);
-                                  }
-                                });
-                              },
-                              child: const Text(
-                                'Remove',
-                                style: TextStyle(color: Colors.red),
-                              ),
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                IconButton(
+                                  icon: const Icon(Icons.remove, color: Colors.red),
+                                  onPressed: () {
+                                    setState(() {
+                                      // remove a single matching item from cartItems
+                                      final removeIndex = cartItems.indexWhere((it) =>
+                                          '${it.title}||${it.price}' == key);
+                                      if (removeIndex != -1) {
+                                        cartItems.removeAt(removeIndex);
+                                      }
+                                    });
+                                  },
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 6.0),
+                                  child: Text('$qty',
+                                      style: const TextStyle(fontSize: 16)),
+                                ),
+                                IconButton(
+                                  icon: const Icon(Icons.add, color: Colors.green),
+                                  onPressed: () {
+                                    setState(() {
+                                      // add one more of this product (use representative instance)
+                                      cartItems.add(product);
+                                    });
+                                  },
+                                ),
+                              ],
                             ),
                           ),
                         );
