@@ -29,7 +29,7 @@ class UnionShopApp extends StatelessWidget {
       // When navigating to '/product', build and return the ProductPage
       // In your browser, try this link: http://localhost:49856/#/product
       routes: {
-        '/product': (context) => const ProductPage(),
+        '/product': (context) => ProductPage(),
         '/about': (context) => const AboutUsScreen(),
         '/signin': (context) => const SignInScreen(),
         '/collections': (context) => const CollectionsScreen(),
