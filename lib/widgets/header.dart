@@ -83,7 +83,8 @@ class Header extends StatelessWidget {
                 const SizedBox(width: 16),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/sale');
+                    Navigator.pushNamed(context, '/sale');
+
                   },
                   child: const Text(
                     'SALE',
