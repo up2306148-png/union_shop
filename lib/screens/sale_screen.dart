@@ -19,12 +19,15 @@ class SaleScreen extends StatelessWidget {
         backgroundColor: const Color(0xFF4d2963),
         foregroundColor: Colors.white,
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Padding(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
               padding: const EdgeInsets.all(16.0),
               child: GridView.count(
+                // Removed Expanded and made the GridView size itself inside the scroll view
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: MediaQuery.of(context).size.width > 600 ? 2 : 1,
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
@@ -82,10 +85,10 @@ class SaleScreen extends StatelessWidget {
                 }),
               ),
             ),
-          ),
-          // Footer
-          const Footer(),
-        ],
+            // Footer
+            const Footer(),
+          ],
+        ),
       ),
     );
   }
