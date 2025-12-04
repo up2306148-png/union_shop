@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dummy_data.dart';
 import 'package:union_shop/widgets/footer.dart';
+import 'package:union_shop/widgets/header.dart'; // added import
 
 class CollectionsScreen extends StatelessWidget {
   const CollectionsScreen({super.key});
@@ -16,14 +17,10 @@ class CollectionsScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Collections'),
-        backgroundColor: const Color(0xFF4d2963),
-        foregroundColor: Colors.white,
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const Header(),
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: GridView.count(
