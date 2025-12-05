@@ -17,7 +17,6 @@ class CollectionDetailScreen extends StatefulWidget {
   final String title;
   final List<Product> products;
 
-  // Accept an optional products list; default to the dummy list so existing callers continue to work.
   CollectionDetailScreen({
     super.key,
     this.title = 'Collection Detail',
@@ -33,22 +32,29 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // use widget.products directly (do not create a local products variable)
+
+    // --- SAFE SORTING LOGIC (executed before building the UI) ---
+    if (sortBy == 'Price: Low to High') {
+      widget.products.sort((a, b) => a.price.compareTo(b.price));
+    } else if (sortBy == 'Price: High to Low') {
+      widget.products.sort((a, b) => b.price.compareTo(a.price));
+    }
 
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
         backgroundColor: const Color(0xFF4d2963),
         foregroundColor: Colors.white,
-        automaticallyImplyLeading: false, // hide the AppBar's default back button
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              const Header(), // inserted header at the very top of the body column
-              // Back button moved here so it appears directly below the Header
+              const Header(),
+
+              // Back button
               Align(
                 alignment: Alignment.centerLeft,
                 child: IconButton(
@@ -58,7 +64,8 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                   onPressed: () => Navigator.of(context).pop(),
                 ),
               ),
-              // Sort by Row
+
+              // Sort Row
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -81,8 +88,10 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                   ),
                 ],
               ),
+
               const SizedBox(height: 16),
-              // Filter Chips Row
+
+              // Filter chips (not active yet)
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -109,8 +118,10 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                   ],
                 ),
               ),
+
               const SizedBox(height: 16),
-              // Sorting Status
+
+              // Sorting status text
               if (sortBy != 'Recommended')
                 Padding(
                   padding: const EdgeInsets.only(bottom: 12.0),
@@ -125,7 +136,8 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                     ),
                   ),
                 ),
-              // Products Grid (no Expanded; allow scroll view to handle scrolling)
+
+              // Product Grid
               GridView.count(
                 crossAxisCount: MediaQuery.of(context).size.width > 600 ? 2 : 1,
                 crossAxisSpacing: 16,
@@ -160,7 +172,6 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                         overflow: TextOverflow.ellipsis,
                       ),
                       const SizedBox(height: 4),
-                      // product.price is a double in dummy_data.dart — format it for display
                       Text(
                         '£${product.price.toStringAsFixed(2)}',
                         style: const TextStyle(fontSize: 13, color: Colors.grey),
@@ -185,8 +196,9 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                   );
                 }),
               ),
+
               const SizedBox(height: 16),
-              // Footer now inside the scrollable content so it appears after the products
+
               const Footer(),
             ],
           ),
@@ -195,4 +207,3 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
     );
   }
 }
-
