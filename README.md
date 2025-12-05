@@ -122,7 +122,6 @@ Static content
 
 Clickable footer link navigates here
 
-
 🧱 4. Project Structure
 lib/
 │
