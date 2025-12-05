@@ -154,6 +154,7 @@ class _CollectionDetailScreenState extends State<CollectionDetailScreen> {
                         child: Image.network(
                           product.imageUrl,
                           fit: BoxFit.cover,
+                          width: double.infinity,
                           errorBuilder: (context, error, stackTrace) {
                             return Container(
                               color: Colors.grey[300],
