@@ -12,13 +12,13 @@ final List<Product> hoodieProducts = [
   Product(
     'Classic Hoodie',
     49.99,
-    'https://images.pexels.com/photos/6311653/pexels-photo-6311653.jpeg',
+    'https://img.sonofatailor.com/images/customizer/product/hoodie-2/Black.jpg',
     previousPrice: 59.99,
     description: 'Classic comfy hoodie.',
   ),
-  Product('Zip-Up Hoodie', 59.99, 'https://via.placeholder.com/400x300?text=Zip-Up+Hoodie',
+  Product('Zip-Up Hoodie', 59.99, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpVsHRaf1Gget2cUP6MzYD_K4GjpQNjf4fw&s',
       previousPrice: 69.99, description: 'Warm zip-up hoodie.'),
-  Product('Pullover Hoodie', 44.99, 'https://via.placeholder.com/400x300?text=Pullover+Hoodie',
+  Product('Pullover Hoodie', 44.99, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfzoKcSsDf0qcHOZOzFPhQu-mD3Juu0GbZA&s',
       previousPrice: 54.99, description: 'Cozy pullover hoodie.'),
 ];
 
