@@ -58,11 +58,16 @@ class Header extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 6),
             color: const Color(0xFF4d2963),
-            child: const Text(
-              'Welcome to Union Shop',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 14),
-            ),
+           
+           child: Text(
+            ModalRoute.of(context)?.settings.name == '/sale'
+                ? 'BIG SALE! OUR ESSENTIAL RANGE HAS DROPPED IN PRICE! OVER 20% OFF! COME GRAB YOURS WHILE STOCK LASTS!'
+                : 'Welcome to Union Shop',
+            textAlign: TextAlign.center,
+            style: const TextStyle(color: Colors.white, fontSize: 14),
+        ),
+
+
           ),
           // Center row with SALE and ABOUT
           Container(
