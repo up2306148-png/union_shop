@@ -1,128 +1,110 @@
-Union Shop — Flutter Coursework
+# Union Shop — Flutter Coursework
 
-A mobile-focused Flutter application recreating the core functionality of the University of Portsmouth Union Shop website.
+A mobile-focused Flutter application recreating the core functionality of the University of Portsmouth Union Shop website.  
 The app displays collections, products, sale items, and provides a working shopping cart.
 
-📌 1. Project Description
+---
 
-The Union Shop app is a simplified e-commerce experience built entirely with Flutter.
+## 📌 1. Project Description
+
+The Union Shop app is a simplified e-commerce experience built entirely with Flutter.  
 It recreates the main user journey of the real Union Shop:
 
-Browse collections
+- Browse collections  
+- View products dynamically  
+- See sale items  
+- Read About Us information  
+- Add / remove / clear items from a shopping cart  
+- Navigate across all pages via header buttons or in-page navigation  
 
-View products dynamically
+All data is **dummy / hardcoded**, as permitted by the coursework guidelines.
 
-See sale items
+---
 
-Read About Us information
+## ⭐ Key Features
 
-Add / remove / clear items from a shopping cart
+- Dynamic collections & products  
+- Sorting on collection detail pages  
+- Detailed product pages with large image previews  
+- Fully functional shopping cart (add, remove, update quantity, clear)  
+- Header and footer shared across screens  
+- Sale page with original & discounted prices  
+- Static About page  
+- Basic Sign-in UI (non-functional)  
+- Responsive layout (1 or 2-column grids depending on width)
 
-Navigate across all pages via header buttons or in-page navigation
+---
 
-All data is dummy / hardcoded, as permitted by the coursework guidelines.
+## 🛠️ 2. Installation & Setup
 
-⭐ Key Features
+### **Prerequisites**
+- Flutter SDK  
+- Git  
+- Visual Studio Code (recommended)  
+- Chrome browser (recommended for mobile view)
 
-Dynamic collections & products
-
-Sorting on collection detail pages
-
-Detailed product pages with large image previews
-
-Fully functional shopping cart (add, remove, update quantity, clear)
-
-Header and footer shared across screens
-
-Sale page with original & discounted prices
-
-Static About page
-
-Basic Sign-in UI (non-functional)
-
-Responsive layout (1 or 2-column grids depending on width)
-
-🛠️ 2. Installation & Setup
-Prerequisites
-
-Flutter SDK
-
-Git
-
-Visual Studio Code (recommended)
-
-Chrome browser (recommended for mobile view)
-
-Clone the repository
+### **Clone the repository**
+```bash
 git clone https://github.com/up2306148-png/union_shop.git
 cd union_shop
+```
 
-Install dependencies
+### **Install dependencies**
+```bash
 flutter pub get
+```
 
-Run the application
+### **Run the application**
+```bash
 flutter run -d chrome
+```
 
-Enable mobile preview
+### **Enable mobile preview**
+Open Chrome → Press **F12** → Click **Toggle Device Toolbar** → Select **iPhone 12 / Pixel 5**.
 
-Open Chrome → Press F12 → Click Toggle Device Toolbar → Select iPhone 12 / Pixel 5.
+---
 
-📱 3. Usage Instructions
-Home Page
+## 📱 3. Usage Instructions
 
-Hero section
+### **Home Page**
+- Hero section  
+- Featured products  
+- Header navigation: Home / Collections / Sale / About / Sign-In  
 
-Featured products
+### **Collections Page**
+- Displays all product groups  
+- Selecting a collection opens its dynamic product list  
 
-Header navigation: Home / Collections / Sale / About / Sign-In
+### **Collection Detail Page**
+- Product grid  
+- Sorting by: Recommended, Price Low→High, Price High→Low  
+- “View Product” navigates to the product page  
 
-Collections Page
+### **Product Page**
+- Large product image (`BoxFit.contain`)  
+- Product title, price, previous price  
+- Add to Cart button  
+- Description  
 
-Displays all product groups
+### **Cart Page**
+- Increase / decrease quantity  
+- Item grouping  
+- Total price calculation  
+- Clear Cart button  
 
-Selecting a collection opens its dynamic product list
+### **Sale Page**
+- Discounted products  
+- Original and sale prices  
 
-Collection Detail Page
+### **About Page**
+- Static content  
+- Clickable footer link navigates here  
 
-Product grid
+---
 
-Sorting by: Recommended, Price Low→High, Price High→Low
+## 🧱 4. Project Structure
 
-“View Product” navigates to the product page
-
-Product Page
-
-Large product image (BoxFit.contain)
-
-Product title, price, previous price
-
-Add to Cart button
-
-Description
-
-Cart Page
-
-Increase / decrease quantity
-
-Item grouping
-
-Total price calculation
-
-Clear Cart button
-
-Sale Page
-
-Discounted products
-
-Original and sale prices
-
-About Page
-
-Static content
-
-Clickable footer link navigates here
-
-🧱 4. Project Structure
+```
 lib/
 │
 ├── main.dart                      # App entry point, routes, and homepage
@@ -141,51 +123,50 @@ lib/
     ├── sign_in_screen.dart
     ├── dummy_data.dart            # Product data models & lists
     └── product_page.dart
+```
 
-Technologies Used
+### **Technologies Used**
+- Flutter  
+- Dart  
+- Material Widgets  
+- Route-based navigation  
+- Stateful & Stateless Widgets  
 
-Flutter
+---
 
-Dart
+## 🧪 5. Testing
 
-Material Widgets
-
-Route-based navigation
-
-Stateful & Stateless Widgets
-
-🧪 5. Testing
-
-The project includes simple automated widget tests (e.g., Cart Screen, Collections Screen) to verify that key screens render successfully.
+The project includes simple automated widget tests (e.g., Cart Screen, Collections Screen) to verify that key screens render successfully.  
 All tests pass using:
 
+```bash
 flutter test
-
+```
 
 These tests demonstrate basic UI stability appropriate for the coursework requirements.
 
-⚠️ 6. Known Issues / Limitations
+---
+
+## ⚠️ 6. Known Issues / Limitations
 
 These do not reduce marks; they simply clarify scope:
 
-Cart persistence not implemented (optional advanced feature)
+- Cart persistence not implemented (optional advanced feature)  
+- Search bar is a placeholder  
+- Newsletter email field is static  
+- No backend or authentication system  
 
-Search bar is a placeholder
+### **Potential Future Improvements**
+- Firebase authentication  
+- Search system  
+- Persisting cart using SharedPreferences  
 
-Newsletter email field is static
+---
 
-No backend or authentication system
+## 👤 7. Contact Information
 
-Potential Future Improvements
+**Student Name:** Pranay Metla  
+**Student Number:** up2306148  
+**Course:** BSc Computer Science  
 
-Firebase authentication
-
-Search system
-
-Persisting cart using SharedPreferences
-
-👤 7. Contact Information
-
-Student Name: Pranay Metla
-Student Number: up2306148
-Course: BSc Computer Science
+---
