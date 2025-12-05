@@ -44,10 +44,10 @@ final List<Product> accessoryProducts = [
 ];
 
 final List<Product> giftProducts = [
-  Product('Gift Card \$25', 25.00, 'https://via.placeholder.com/400x300?text=Gift+Card+25',
+  Product('Gift Card \$25', 25.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROv-XY2kXyp0oypBdQbc7s2HXGx1uEcF0djA&s',
       previousPrice: 25.00, description: 'Gift card for purchases.'),
-  Product('Gift Box', 29.99, 'https://via.placeholder.com/400x300?text=Gift+Box',
+  Product('Gift Box', 29.99, 'https://www.crystalmailing.co.uk/cdn/shop/files/GBwithRibbonRed_50e98f4f-9d98-4bcd-af08-ff468d951ecc.jpg?v=1688652116',
       previousPrice: 34.99, description: 'Presentation gift box.'),
-  Product('Mug', 12.50, 'https://via.placeholder.com/400x300?text=Mug',
+  Product('Mug', 12.50, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Y4xVf9Rboau85q1fGzNht4SJCjPn5Dm2rA&s',
       previousPrice: 15.00, description: 'Union logo mug.'),
 ];
