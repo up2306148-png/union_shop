@@ -24,11 +24,11 @@ final List<Product> hoodieProducts = [
 
 
 final List<Product> tshirtProducts = [
-  Product('Crewneck Tee', 19.99, 'https://via.placeholder.com/400x300?text=Crewneck+Tee',
+  Product('Crewneck Tee', 19.99, 'https://m.media-amazon.com/images/I/61xVh4j40iL._AC_SL1200_.jpg',
       previousPrice: 24.99, description: 'Everyday crewneck tee.'),
-  Product('V-Neck Tee', 17.99, 'https://via.placeholder.com/400x300?text=V-Neck+Tee',
+  Product('V-Neck Tee', 17.99, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHyrii-wyK01TXxctYtwtdVgt5ygQVDd-__g&s',
       previousPrice: 22.99, description: 'Casual v-neck tee.'),
-  Product('Long Sleeve Tee', 24.99, 'https://via.placeholder.com/400x300?text=Long+Sleeve+Tee',
+  Product('Long Sleeve Tee', 24.99, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz794sMs4R_0oM4qvvW4fyueLHq2lSDuN1tg&s',
       previousPrice: 29.99, description: 'Long sleeve option.'),
 ];
 
