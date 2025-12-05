@@ -9,13 +9,19 @@ class Product {
 }
 
 final List<Product> hoodieProducts = [
-  Product('Classic Hoodie', 49.99, 'https://via.placeholder.com/400x300?text=Classic+Hoodie',
-      previousPrice: 59.99, description: 'Classic comfy hoodie.'),
+  Product(
+    'Classic Hoodie',
+    49.99,
+    'https://images.pexels.com/photos/6311653/pexels-photo-6311653.jpeg',
+    previousPrice: 59.99,
+    description: 'Classic comfy hoodie.',
+  ),
   Product('Zip-Up Hoodie', 59.99, 'https://via.placeholder.com/400x300?text=Zip-Up+Hoodie',
       previousPrice: 69.99, description: 'Warm zip-up hoodie.'),
   Product('Pullover Hoodie', 44.99, 'https://via.placeholder.com/400x300?text=Pullover+Hoodie',
       previousPrice: 54.99, description: 'Cozy pullover hoodie.'),
 ];
+
 
 final List<Product> tshirtProducts = [
   Product('Crewneck Tee', 19.99, 'https://via.placeholder.com/400x300?text=Crewneck+Tee',
