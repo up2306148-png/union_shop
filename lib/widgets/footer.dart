@@ -36,14 +36,20 @@ class Footer extends StatelessWidget {
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text('Help & Information',
+                  children: [
+                    const Text('Help & Information',
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                    SizedBox(height: 8),
-                    Text('Contact Us'),
-                    Text('Delivery & Returns'),
-                    Text('Terms & Conditions'),
-                    Text('Privacy Policy'),
+                    const SizedBox(height: 8),
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, '/about'),
+                      child: const Text(
+                        'About Us',
+                        style: TextStyle(decoration: TextDecoration.underline),
+                      ),
+                    ),
+                    const Text('Delivery & Returns'),
+                    const Text('Terms & Conditions'),
+                    const Text('Privacy Policy'),
                   ],
                 ),
               ),
