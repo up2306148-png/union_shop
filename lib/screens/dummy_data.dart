@@ -33,13 +33,13 @@ final List<Product> tshirtProducts = [
 ];
 
 final List<Product> accessoryProducts = [
-  Product('Baseball Cap', 14.99, 'https://via.placeholder.com/400x300?text=Baseball+Cap',
+  Product('Baseball Cap', 14.99, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq8LTsnsHHLSzRhlSxL58OBAmgEH0H-GpzVw&s',
       previousPrice: 20.00, description: 'Adjustable cap.'),
-  Product('Beanie', 12.99, 'https://via.placeholder.com/400x300?text=Beanie',
+  Product('Beanie', 12.99, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO76PjOFvezsHRiKSKx7haYhqczU2aYCS1pQ&s',
       previousPrice: 18.00, description: 'Warm beanie.'),
-  Product('Socks Pack', 9.99, 'https://via.placeholder.com/400x300?text=Socks+Pack',
+  Product('Socks Pack', 9.99, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROQ1xIWGhb75fjezelcVc_haAPAG7T_Th22w&s',
       previousPrice: 12.00, description: 'Comfort pack of socks.'),
-  Product('Keychain', 4.99, 'https://via.placeholder.com/400x300?text=Keychain',
+  Product('Keychain', 4.99, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd981b8ShhwTMpVJ3V1-wXCrxkJaUZPrnO2g&s',
       previousPrice: 6.99, description: 'Union keychain.'),
 ];
 

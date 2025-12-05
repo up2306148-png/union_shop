@@ -13,7 +13,7 @@ class SaleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final saleProducts = [
-      {'title': 'Sale Hoodie', 'original': '£45.00', 'sale': '£29.99', 'image': 'https://via.placeholder.com/300x300?text=Sale+1'},
+      {'title': 'Sale Hoodie', 'original': '£45.00', 'sale': '£29.99', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMqZV0qWSxwyYEs4TXQIr1mcK7hZz6BdYWzg&s'},
       {'title': 'Sale T-Shirt', 'original': '£22.00', 'sale': '£14.99', 'image': 'https://via.placeholder.com/300x300?text=Sale+2'},
       {'title': 'Sale Mug', 'original': '£9.99', 'sale': '£6.99', 'image': 'https://via.placeholder.com/300x300?text=Sale+3'},
       {'title': 'Sale Tote Bag', 'original': '£14.99', 'sale': '£9.99', 'image': 'https://via.placeholder.com/300x300?text=Sale+4'},
